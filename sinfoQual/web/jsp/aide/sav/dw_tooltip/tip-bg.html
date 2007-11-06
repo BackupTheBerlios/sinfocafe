@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>Tooltip with Background Image</title>
+<style type="text/css">
+body	{ font-family: Verdana, arial, helvetica, sans-serif;  
+	font-size:14px; }
+h1	{ font-size:18px }	
+a:link { color:#33c }	
+a:visited { color:#339 }		
+
+/* This is where you can customize the appearance of the tooltip */
+div#tipDiv {
+  position:absolute; visibility:hidden; left:0; top:0; z-index:10000;
+  background:url("images/marble.gif") #eef2f9;
+  border:1px solid #336; 
+  width:250px; padding:4px;
+  color:#000; font-size:11px; line-height:1.2;
+}
+div.tp1 { font-size:12px; color:#336; padding-top:4px }
+</style>
+<script src="js/dw_event.js" type="text/javascript"></script>
+<script src="js/dw_viewport.js" type="text/javascript"></script>
+<script src="js/dw_tooltip.js" type="text/javascript"></script>
+<script type="text/javascript">
+/*************************************************************************
+  This code is from Dynamic Web Coding at http://www.dyn-web.com/
+  Copyright 2003-5 by Sharon Paine 
+  See Terms of Use at http://www.dyn-web.com/bus/terms.html
+  regarding conditions under which you may use this code.
+  This notice must be retained in the code as is!
+*************************************************************************/
+
+function doTooltip(e, msg) {
+  if ( typeof Tooltip == "undefined" || !Tooltip.ready ) return;
+  Tooltip.show(e, msg);
+}
+
+function hideTip() {
+  if ( typeof Tooltip == "undefined" || !Tooltip.ready ) return;
+  Tooltip.hide();
+}
+	
+// variables for tooltip content 
+// name them whatever you want, add as many as you need
+var tip1 = '<img src="images/sm-duck.gif" width="90" height="44" alt="" border="0"><div class="tp1">A transparent gif looks nice over a background.</div>';
+
+</script>	
+</head>
+<body onload="Tooltip.init()">
+<h1>Tooltip Example with Background-Image</h1>
+<p>This example uses a <a href="javascript://" onmouseover="doTooltip(event,tip1)" onmouseout="hideTip()">background image</a> in the tooltip. Specify the image file in the style sheet.</p>
+
+
+<p>Please read dyn-web's <a href="http://www.dyn-web.com/bus/terms.html" onmouseover="doTooltip(event,'If you plan to use our code, please follow our terms. Thank you.')" onmouseout="hideTip()">Terms of Use</a>.</p>
+
+<p>&nbsp;</p>
+
+<p><a href="http://www.dyn-web.com" onmouseover="doTooltip(event,'A link to Dynamic Web Coding would be appreciated!')" onmouseout="hideTip()">www.dyn-web.com</a></p>
+
+</body>
+</html>

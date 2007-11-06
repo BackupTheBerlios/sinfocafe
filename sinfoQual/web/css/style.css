@@ -1,0 +1,647 @@
+/*
+colores de FAPECAFES
+bandeau du haut: #336633
+menu de gauche: #006400
+pied de pqge: #8FBC8F
+*/
+
+body {
+	background-color:#336633;
+}
+
+/*
+couleur des textes
+*/
+body, table, div, span, input, textarea, select, a {
+	font-family: "Verdana", Arial, sans-serif;
+	font-size: 12px;
+    color:#00547F ;
+}
+
+legend {
+}
+
+div, span {
+}
+
+hr {
+	color: #00547F;
+	height: 1px;
+}
+
+a{
+  text-decoration: none;
+}
+
+th a{
+   color: white;
+   font-size:11px;    
+}
+
+span a {
+     color: #00547F;
+     text-decoration:underline;
+}
+
+fieldset {
+    border-color: #84B0C7;
+	border-style: solid;
+	border-width: 1px;
+	padding: 5px;
+}
+
+input, textarea, select {
+}
+
+img {
+	vertical-align: middle;
+}
+
+li {
+    list-style-image: url("../images/pucePlus.gif");
+}
+
+.sikfAide {
+	font-style: italic;
+}
+
+.sikfAlerte {
+	font-style:italic;
+	color: red;
+}
+
+.sikfBouton{
+	cursor:pointer;
+}
+/*couleur des boutons
+*/
+.sikfBoutonAction {
+    vertical-align: middle;
+	border: 0;
+	text-align: center;
+	font-weight: bold;
+	font-family: arial;
+	
+	/*background-position: right bottom;
+	background-repeat: no-repeat;*/
+	
+	background-color:#336633;
+	color: white;
+	cursor:pointer;
+
+        /*Rajout*/
+}
+
+.sikfBoutonAide {
+    cursor:pointer;
+}
+
+.sikfBoutonAideSaisie {
+    cursor:pointer;
+}
+
+
+.sikfDonneeAffichage {
+        display: table-cell;
+	padding: 2px;
+	padding-left: 5px;
+	text-align: left;
+	vertical-align: top;
+}
+
+.sikfInformation  {
+	font-style: italic;
+	font-weight: bold;
+	margin-left: 10px;
+	background-image: url('../images/puceRouge.gif');
+	background-repeat: no-repeat;
+	background-position: left;
+}
+
+.sikfLibelleInfo{
+	
+    color: #C2001E;
+    font-weight:bolder;
+    font-size: 1.2em;
+}
+
+.sikfLibelle {
+	margin-top: 2px;
+	display: table-cell;
+	padding: 2px;
+	padding-left: 5px;
+	vertical-align: middle;
+	background-position: left, top;
+	background-repeat: no-repeat;
+	text-align: right;
+
+}
+
+.sikfLibelleObligatoire {
+	margin-top: 2px;
+	display: table-cell;
+	padding: 2px;
+	padding-left: 5px;
+	vertical-align: top;
+	background-position: left, top;
+	background-repeat: no-repeat;
+	text-align: right;
+	font-weight: bold;
+}
+
+.sikfLienNavigation a{
+	font-size:11px;
+ 	font-weight: bold;
+} 
+
+.sikfSectionContenu {
+	clear: both; 
+	position: relative;
+	font-weight:normal;
+	
+}
+
+.sikfSectionTitre {
+    position: relative;
+    width: 100%;
+    border-bottom: 1.5px #c2001e solid; 
+	font-size: 1.6em;
+    font-weight: normal;
+    color: #C2001E;
+    
+}
+.sikfError {
+    position: relative;
+    width: 100%;
+    font-weight: normal;
+    color: #C2001E;
+}
+
+/*Titre de SINFOCAFE*/
+.sikfTitreApplication {
+    text-transform: uppercase;
+    font-size: 1.2em;
+    font-weight: bolder;
+    color: #fff;
+    padding: 2px 0 2px 15px;
+    border-top: 1px #fff solid;
+    border-bottom: 1px #fff solid;
+    font-family: "Verdana", Arial, sans-serif;
+    margin-bottom: 15px;
+    background-color: #336633;
+    }
+
+.sikfTitreContenu {
+    font-size: 12px;
+    line-height: 3.5em;
+    background: transparent url("../images/puceBleue.gif") no-repeat 0 13px;
+    padding: 0 0 1em 1.5em;
+}
+
+.sikfTitrePage {
+	font-weight: bold;
+}
+
+.sikfMenu {
+	margin: 0 0.7em 1.1em 0.5em; 
+}
+
+.sikfMenu A {
+	text-decoration: none;
+}
+
+.sikfMenu A:hover {
+	text-decoration: none;
+}
+
+.sikfMenu A.active:hover {
+	text-decoration: none;
+}
+
+.sikfMenuNiveau1 A {
+	color: #fff;
+	border-bottom: 1px #00547F solid;
+	display: block;
+	margin-bottom: 0.4em;
+	height: 1.6em;
+	font-weight: bolder;
+	font-size: 1.1em;
+	vertical-align: bottom;
+}
+
+.sikfMenuNiveau1 A:hover{
+	color: #C2001E;
+	text-decoration : underline;	
+	}
+
+.sikfMenuNiveau2 A {
+	padding-left: 10px;
+	border-bottom: none;
+	margin-bottom: 0;
+	font-size:12px;
+	font-weight: normal;
+	background: transparent url("../images/flecheRouge.gif") no-repeat 0 3px;
+	text-decoration: none;
+	color: #fff;
+}
+
+.sikfMenuNiveau2 a:hover {
+	text-decoration : underline;
+	color: #C2001E; 
+}
+
+
+#sikfEntete .menu a{
+	font-family: "Verdana", Arial, sans-serif;
+    font-size: 0.95em;
+    text-decoration: none;
+    color: #165984;
+    display: block;
+    width: 60px;
+    padding-top: 22px;
+}
+
+#sikfEntete .menu a:hover {
+     color: #cc0000;
+}
+
+#sikfEntete .milieu a{
+     font-weight: bolder;
+     width:100px;
+     color: #fff;
+     text-decoration:none;
+}
+
+#sikfEntete .milieu a:hover{
+     color: #cc0000;
+     text-decoration:none;
+}
+
+
+.sikfMenuNiveau1Selected A {
+	border-bottom: 1px #00547F solid;
+	display: block;
+	margin-bottom: 0.4em;
+	height: 1.6em;
+	font-weight: bolder;
+	font-size: 1.1em;
+	vertical-align: bottom;
+	color: #C2001E;
+}
+
+.sikfMenuNiveau1Selected a:hover {
+	color: #C2001E;
+}
+
+
+.sikfMenuNiveau2Selected A {
+	padding-left: 10px;
+	border-bottom: none;
+	margin-bottom: 0;
+	font-size:12px;
+	font-weight: normal;
+	background: transparent url("../images/flecheRouge.gif") no-repeat 0 3px;
+	text-decoration : underline;
+	color: #C2001E;
+}
+
+.sikfMenuNiveau2Selected a:hover {
+	text-decoration : underline;
+	color: #C2001E;
+}
+
+.sikfMenuNiveau3 a {
+	padding-left: 6px;
+	margin-left: 10px;
+	font-size:11px;
+	font-weight: normal;
+	background-image: url("../images/puceRouge2.gif");
+	background-repeat:no-repeat;
+	background-position: left;
+	text-decoration: none;
+	text-align: left;
+	vertical-align : top;
+	color: #fff;
+}
+
+.sikfMenuNiveau3 a:hover {
+	text-decoration : underline;
+	color: #C2001E; 
+}
+
+.sikfMenuNiveau3Selected a {
+	padding-left:6px;
+	margin-left: 10px;
+	font-size:11px;
+	font-weight: normal;
+	background-image: url("../images/puceRouge2.gif");
+	background-repeat:no-repeat;
+	background-position: 0px;
+	text-decoration: underline;
+	text-align: left;
+	vertical-align : top;
+	color: #C2001E;
+}
+
+.sikfMenuNiveau3Selected a:hover {
+	text-decoration : underline;
+	color: #C2001E;
+}
+
+#sikfBanniere a {
+    font-weight: normal;
+    color: #00547F;
+    text-decoration: none;
+    font-size: 11.5px;
+    padding-left: 20px;
+    line-height: 1em;
+    background: transparent url("../images/puceRouge.gif") no-repeat 10 4px;
+}
+
+#sikfBanniere a:hover {
+    text-decoration: underline;
+}
+
+.sikfTitreBanniere {
+    text-align: center;
+    background-color: #E07F8E;
+    border-top: 1px #C2001E solid;
+    border-bottom: 1px #C2001E solid;
+    color: #fff; 
+    padding-bottom: 1px;
+    padding-top: 1px;
+    font-size: 1.3em;
+    line-height: 1.1em;
+    margin-bottom: 0.6em;
+}
+
+table {
+	border-collapse: collapse; 
+}
+
+TABLE CAPTION {
+	caption-side: left;
+	font-weight: bold;
+	text-align: left;
+	margin-top: 2px;
+	padding: 2px;
+	padding-left: 5px;
+	background-image: url("../images/background_arrondi_gaucheA.gif");
+	background-position: left;
+	background-repeat: no-repeat;
+}
+
+TABLE THEAD TH {
+
+	background-color: #336633;
+	color: #FFFFFF; 
+	font-size: 11.5px; 
+	font-weight: bold;
+	text-align: center;
+	padding-left: 8px;
+	padding-right: 8px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-left: 1px #fff solid;
+	border-right: 1px #fff solid;
+	border-top: 1px #fff solid;
+	border-bottom: 1px #fff solid;
+}
+
+.sikfContenuTableauCentre {
+    font-size: 11px;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left-value: 8px;
+    padding-left-ltr-source: physical;
+    padding-left-rtl-source: physical;
+    padding-right-value: 8px;
+    padding-right-ltr-source: physical;
+    padding-right-rtl-source: physical;
+}
+
+
+.sikfTableauLigne hover{
+	background-color: #FFFBBC;	
+}
+/* tableau de suivi general*/
+.sikfTableauLigneAlt {	
+	background-color: #8FBC8F; 
+}
+
+.sikfTableauLigneAlt hover{
+	background-color: #FFFBBC;	
+}
+
+.sikfGroupeBox {
+	vertical-align: baseline;
+	border: none;
+	background-color: transparent;
+	color: #00547F;
+	width: 1px;
+	font-size:12px;
+}
+
+
+.sikfMenuNiveau4 a:hover {
+	text-decoration : underline;
+	color: #C2001E; 
+}
+
+.sikfMenuNiveau4Selected a {
+	padding-left:6px;
+	margin-left: 18px;
+	font-size:10px;
+	font-weight: normal;
+	background-repeat:no-repeat;
+	background-position: 0px;
+	text-decoration: underline;
+	text-align: left;
+	vertical-align : top;
+	color: #C2001E;
+}
+
+.sikfMenuNiveau4Selected a:hover {
+	text-decoration : underline;
+	color: #C2001E;
+}
+
+
+#sikfEntete{
+	position:absolute;
+	top: 0px;
+	width: 988px; 	
+	height: 65px; 	
+	left: 0px; 		
+	border-left: 1px #fff solid;
+	background: #336633 url("../../images/bgEntete2.gif") repeat-y;
+	border-bottom: 1px #fff solid;
+	padding-left: 0px;
+	padding-top:0px;
+}
+
+#sikfEntete .iconePrincipale {
+    width:102px;
+    float:left;
+    background: url("../../images/logo_fapecafes.gif") no-repeat center middle;
+    height: 90%;
+   
+}
+/*Pied de page*/
+#sikfPiedPage {
+	position: absolute;
+	bottom: 0; /* Alex ________________________________________*/
+	border-top-style: solid;
+	border-top-width: 15px;
+	border-top-color: #ffffff;
+	background-color: #8FBC8F;
+	text-align: center;
+	height: 30px;
+	clear: both;
+	width: 988px; 
+	top: 640px;
+	left: 0px;
+	}
+#sikfPiedPageBis {
+	border-top-style: solid;
+	border-top-width: 15px;
+	border-top-color: #ffffff;
+	background-color: #8FBC8F;
+	text-align: center;
+	height: 30px;
+	
+	width: 688px; 
+	
+	left: 0px;
+	position: absolute;
+	
+}
+.sikfError {
+	position: absolute;
+	right:0px;
+	width:420px;
+	top: 5px;
+	font-family: "Verdana", Arial, sans-serif;
+	font-size: 0.94em;
+    color: r;
+    text-align: center;
+}
+
+
+/* bandeau de gauche */
+#sikfNavigation	{
+	position:absolute;
+	height:580px; 	
+	width: 200px; 	
+	text-align: left;
+	border-left: 1px #fff solid;
+	/*border-right: 1px #fff solid; ALEX MODIF*/
+        border-right: 0px #fff solid;
+	padding-top: 20px;
+	padding-bottom: 20px;	
+	top: 65px; 		
+	left: 0px; 		
+	z-index:2;
+	font-family: "Verdana", Arial, sans-serif;
+	vertical-align: top;
+	background: #006400 url("../../images/bgEntete2.gif") repeat-y;
+	overflow: auto; 
+}
+
+#sikfContenu	{
+    position: absolute;	
+    top: 65px; 		
+	width : 978px;
+	height: 580px;
+	padding: 2px 20px 0px 210px;
+	z-index:1;
+	background: #fff url("../images/bgContenu.jpg") repeat-x;
+	overflow: auto;
+}
+
+#sikfEntete .menu {
+	position: absolute;
+	right:0px;
+	width:420px;
+	top: 5px;
+	font-family: "Verdana", Arial, sans-serif;
+	font-size: 0.94em;
+    color: #fff;
+    text-align: center;
+}
+
+#sikfEntete .backgroundRegle {
+}
+
+#sikfEntete .milieu {
+	position: absolute;
+	left: 205px;	
+	top: 0px; 
+	background: transparent url("../images/bgIdentification.jpg") no-repeat right middle;
+	height: 100%; 	
+	width: 340px;
+	color: #fff;
+}
+
+
+#sikfEntete .deconnexion {
+	position: absolute;
+	left: 545px;
+	top: 0px;
+	width: 440px;	
+	height: 65px;
+	text-align: center;
+	vertical-align:bottom;
+	background: url("../../images/logo_fapecafes.gif") no-repeat right middle;
+}
+
+#sikfEntete .lienMenu {
+
+}
+/*Calenddrier javascript*/
+.ds_box {
+	background-color: #FFF;
+	border: 1px solid #000;
+	position: absolute;
+	z-index: 32767;
+}
+
+.ds_tbl {
+	background-color: #FFF;
+}
+
+.ds_head {
+	background-color:#006400 ;
+	color: #FFF;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	text-align: center;
+	letter-spacing: 2px;
+}
+
+.ds_subhead {
+	background-color: #CCC;
+	color: #000;
+	font-size: 12px;
+	font-weight: bold;
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	width: 32px;
+}
+
+.ds_cell {
+	background-color: #EEE;
+	color: #000;
+	font-size: 13px;
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 5px;
+	cursor: pointer;
+}
+
+.ds_cell:hover {
+	background-color: #F3F3F3;
+}
+

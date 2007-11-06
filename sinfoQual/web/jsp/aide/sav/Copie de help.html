@@ -1,0 +1,854 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Help</title>
+<style>
+	body
+	{
+	margin: 0;
+	font-family: "Verdana", Arial, sans-serif;
+	font-size:11px;
+	color:#000000;
+	}
+	
+	#help
+	{
+	background-color:#336633;
+	padding:0;
+	margin:0;
+	}
+	
+	#header
+	{	
+	height:80px;		
+	padding:14px;
+	}
+	
+	#headerContent
+	{	
+	height:77px;
+	background:url(img/logo_fapecafes.jpg);
+	background-repeat:no-repeat;
+	background-color:#FFFFFF;
+	padding:5px;
+	}
+	
+	#menu
+	{
+	width:168px;
+	padding:14px;
+	padding-right:0;
+	text-align:left;
+	max-height:500px;
+	background-color:#336633;
+	}
+
+	#menuContent
+	{
+	background:#FFFFFF;
+	padding:4px;
+	}	
+	
+	#resultSearchLayer
+	{
+	display:;
+	padding:14px;
+	padding-right:0;
+	width:172px;
+	}
+	
+	#resultSearch
+	{
+	padding-left:2px;
+	max-height:120px;
+	overflow:auto;
+	color:#333333;
+	}
+	
+	#searchHide
+	{
+	/*
+	width:50px;
+	max-height:50px;
+	overflow:auto;
+	*/
+	display:none;
+	}
+	
+	#content
+	{
+	height:460px;
+	width:500px;
+	background-color:#FFFFFF;
+	}
+	
+	#main
+	{
+	padding:14px;	
+	}
+	
+	.link:hover
+	{
+	cursor:pointer;
+	text-decoration:underline;
+	color:#000099;
+	}
+	
+	.linkImg
+	{
+	display:inline;
+	}
+	
+	#histoDisplay
+	{
+	/*
+	border-style:solid;
+	border:1px;
+	border-color:#000000;
+	
+	background-color:#84FF84;
+	*/
+	}
+	
+	#histoFleche
+	{
+	width:110px;
+	max-height:100px;
+	color:#336633;	
+	background:#FFFFFF;
+	overflow: auto;
+	font-size:9px;
+	position:absolute;
+	left: 21px;
+	top: 170px;	
+	}		
+	.ico
+	{
+	display:inline;
+	}
+		
+	.inline
+	{
+	display:inline;
+	}
+	
+	.groupTitle
+	{
+	font-size:12px;
+	color:#000000;
+	}
+	
+	
+	//---------------------------arrondi	
+	.arrondi{display:block}
+	.arrondi *{
+	  display:block;
+	  height:1px;
+	  overflow:hidden;
+	  font-size:.01em;
+	  background:#FFFFFF}
+	.arrondi1{
+	  margin-left:3px;
+	  margin-right:3px;
+	  padding-left:1px;
+	  padding-right:1px;
+	  border-left:1px solid #6da66d;
+	  border-right:1px solid #6da66d;
+	  background:#bfd8bf}
+	.arrondi2{
+	  margin-left:1px;
+	  margin-right:1px;
+	  padding-right:1px;
+	  padding-left:1px;
+	  border-left:1px solid #197319;
+	  border-right:1px solid #197319;
+	  background:#cee1ce}
+	.arrondi3{
+	  margin-left:1px;
+	  margin-right:1px;
+	  border-left:1px solid #cee1ce;
+	  border-right:1px solid #cee1ce;}
+	.arrondi4{
+	  border-left:1px solid #6da66d;
+	  border-right:1px solid #6da66d}
+	.arrondi5{
+	  border-left:1px solid #bfd8bf;
+	  border-right:1px solid #bfd8bf}
+	.arrondifg{
+	  background:#FFFFFF}
+	  //-----------------------------------
+  
+</style>
+</head>
+<body onload="loadPage('home.html');"><!-- page désirée au chargement-->
+	<table id="help">
+		<tr>
+			<td colspan="2">
+				<div id="header">
+					<b class="arrondi">
+					<b class="arrondi1"><b></b></b>
+					<b class="arrondi2"><b></b></b>
+					<b class="arrondi3"></b>
+					<b class="arrondi4"></b>
+					<b class="arrondi5"></b></b>
+					<div id="headerContent">
+						<div align="right">
+							<div class="inline" id="es" title="Espanol">
+								<img class="link" src="img/flagEs.jpg" onclick="languageChange('es'); update();"/>
+							</div>
+							<div class="inline" id="en" title="English">
+								<img class="link" src="img/flagEn.GIF" onclick="languageChange('en'); update();"/>
+							</div>
+							<div class="inline" id="fr" title="French">
+								<img class="link" src="img/flagFr.jpg" onclick="languageChange('fr'); update();"/>
+							</div>
+							<div style="margin-top:4px; margin-bottom:4px;">
+								<a class="link" onclick="loadPage('home.html');">
+									<img src="img/home_on.bmp"
+									onMouseOver="this.src='img/home_press.bmp'" 
+									onMouseOut="this.src='img/home_on.bmp'"
+									/>
+								</a>
+								<a class="link" onclick="iPrint(iframe)";>
+									<img src="img/print_on.bmp"
+										onMouseOver="this.src='img/print_press.bmp'" 
+										onMouseOut="this.src='img/print_on.bmp'"							
+									/>
+								</a>
+							</div>				
+							Rechercher <input type="text" size="17" id="recherche" onkeyup="search();"/>
+						</div>
+					</div>
+					<b class="arrondi">
+					<b class="arrondi5"></b>
+					<b class="arrondi4"></b>
+					<b class="arrondi3"></b>
+					<b class="arrondi2"><b></b></b>
+					<b class="arrondi1"><b></b></b></b>		
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top">
+			<div id="menu">
+				<b class="arrondi">
+				<b class="arrondi1"><b></b></b>
+				<b class="arrondi2"><b></b></b>
+				<b class="arrondi3"></b>
+				<b class="arrondi4"></b>
+				<b class="arrondi5"></b></b>
+				<div id="menuContent">
+					<a class="link" onclick="back();">
+						<img src="img/back_on.bmp" 
+						onMouseOver="this.src='img/back_press.bmp'" 
+						onMouseOut="this.src='img/back_on.bmp'"
+						/>
+					</a>							
+					<a onclick="openReduce(); histoDisplay();">
+						<div id="icoHisto" class="ico"><img src="img/histo+.bmp" /></div>
+					</a>
+					<div id="histoFleche"></div>
+					<!-- contient <div id="histoDisplay"></div> -->							
+					<a class="link" onclick="next();">
+						<img src="img/next_on.bmp"
+						onMouseOver="this.src='img/next_press.bmp'" 
+						onMouseOut="this.src='img/next_on.bmp'"
+						/>
+					</a>
+				<br />
+				<br />	
+				<a class="groupTitle" onclick="openReduceGroup('access','accessico')">
+					<div id="accessico" class="ico"><img src="img/+.bmp" /></div>
+					&nbsp;&nbsp;Access <!-- bean à mettre-->
+				</a>
+				<div id="access"></div>					
+				<br />				
+				<a class="groupTitle" onclick="openReduceGroup('creation','creationico')">
+					<div id="creationico" class="ico"><img src="img/+.bmp" /></div>
+					&nbsp;&nbsp;Creation <!-- bean à mettre-->
+				</a>
+				<div id="creation"></div>
+			</div>	
+				  <b class="arrondi">
+				  <b class="arrondi5"></b>
+				  <b class="arrondi4"></b>
+				  <b class="arrondi3"></b>
+				  <b class="arrondi2"><b></b></b>
+				  <b class="arrondi1"><b></b></b></b>
+			</div>		
+			<div id="resultSearchLayer">
+					  <b class="arrondi">
+					  <b class="arrondi1"><b></b></b>
+					  <b class="arrondi2"><b></b></b>
+					  <b class="arrondi3"></b>
+					  <b class="arrondi4"></b>
+					  <b class="arrondi5"></b></b>
+					
+					  <div class="arrondifg">
+							<div id="resultSearch"></div>
+							<div id="searchHide"></div>	
+					  </div>
+					  <b class="arrondi">
+					  <b class="arrondi5"></b>
+					  <b class="arrondi4"></b>
+					  <b class="arrondi3"></b>
+					  <b class="arrondi2"><b></b></b>
+					  <b class="arrondi1"><b></b></b></b>
+			</div>
+				<br />
+					<div id="loadIframeHide" style="display:;"></div>	
+				<br />	
+	 	 </td>
+	 	 <td>		 
+			<div id="main">
+			  <b class="arrondi">
+			  <b class="arrondi1"><b></b></b>
+			  <b class="arrondi2"><b></b></b>
+			  <b class="arrondi3"></b>
+			  <b class="arrondi4"></b>
+			  <b class="arrondi5"></b></b>			
+			  <div class="arrondifg">
+				<div id="content"></div>	
+			  </div>
+			  <b class="arrondi">
+			  <b class="arrondi5"></b>
+			  <b class="arrondi4"></b>
+			  <b class="arrondi3"></b>
+			  <b class="arrondi2"><b></b></b>
+			  <b class="arrondi1"><b></b></b></b>
+			</div>
+	 	 </td>
+	</tr>
+</table>
+<script type="text/javascript">
+//Remarque: Il ne doit pas y avoir de doublons au niveau des pages d'aides!!
+
+/* Début Lien et Historique */
+	//load page
+	var compteur=0;
+	var compteurHisto=0;
+	var compteurMax=0;
+	var tab = new Array(); //tableau de l'historique (première page visitée a pour arg 1)
+	var etatOpenReduce=0;//état du bouton de l'historique
+	
+	//initialisation du langage
+	var language='fr';
+	languageChange('fr');
+	//Groupe de pages
+	var page = new Array();
+	var insertVar=0;	
+	
+	//Les groupes
+	var groupTab = new Array();
+	var compteurGroup=0;	
+	//-------------------------------------------------------------------Ajout de groupe-------->	
+	insertGroup('access');
+	insertGroup('creation');
+	//-------------------------------------------------------------------Ajout de groupe-------->	
+	
+	//Les contenus crés dynamiquement----------------------------------------------------------------->	
+	
+	var accessetat=0; //ajout d'une variable d'état à chaque groupe rajouté
+	//ex: insert(url, nom affiché, groupe de la page, numéro du groupe)
+	//insert('home.html','Home','','','fr');
+	insert('pages/fr/filtre_du_test.html','filtre_du_test','access','1','fr');
+	insert('pages/fr/cafe_verde.html','CafeVerde','access','1','fr');
+	insert('pages/fr/taille.html','taille','access','1','fr');		
+	insert('pages/fr/defauts.html','defauts','access','1','fr');
+	insert('pages/fr/degustation.html','degustation','access','1','fr');
+	insert('pages/fr/resume.html','resume','access','1','fr');
+	
+	
+	insert('pages/en/Test_filter.html','Test_filter','access','1','en');
+	insert('pages/en/greenCoffee.html','greenCoffee','access','1','en');
+	insert('pages/en/tamano.html','tamano','access','1','en');
+	insert('pages/en/flaw.html','flaw','access','1','en');
+	insert('pages/en/tasting.html','tasting','access','1','en');
+	insert('pages/en/result.html','result','access','1','en');
+	
+	
+	var creationetat=0;	
+	
+	insert('pages/fr/creation/afficherResult.html','afficherResult','creation','2','fr');
+	insert('pages/fr/creation/afficherTest.html','afficherTest','creation','2','fr');
+	insert('pages/fr/creation/etape1.html','etape1','creation','2','fr');
+	insert('pages/fr/creation/etape2.html','etape2','creation','2','fr');
+	insert('pages/fr/creation/etape3.html','etape3','creation','2','fr');
+	insert('pages/fr/creation/structure.html','structure','creation','2','fr');
+	
+	
+	insert('pages/en/creation/displayResult.html','displayResult','creation','2','en');
+	insert('pages/en/creation/step1.html','step1','creation','2','en');
+	insert('pages/en/creation/step2.html','step2','creation','2','en');
+	insert('pages/en/creation/step3.html','step3','creation','2','en');
+	insert('pages/en/creation/structure.html','structure','creation','2','en');
+	insert('pages/en/creation/testFounded.html','testFounded','creation','2','en');
+	
+
+	//Fin des contenus-------------------------------------------------------------------------------->	
+	
+	function languageChange(x)
+	{
+		if(x=='fr'){language='fr';}
+		if(x=='es'){language='es';}
+		if(x=='en'){language='en';}
+	}
+	
+	function loadPage(url)
+	{
+		if (url!=tab[compteur])//la page demandée ne doit pas  être déjà affichée
+		{
+		var content=document.getElementById('content');
+		x='<iframe id="iframe" name="iframe" src="'
+			+url
+			+'" scrolling="auto" align="middle"'
+			+' marginwidth="15px" marginheight="10px" width="500px" height="452px" frameborder="0"></iframe>';
+		content.innerHTML=x;
+		compteur+=1;
+		compteurHisto=compteur;
+		if (compteur>compteurMax){compteurMax=compteur;}
+		histo(url); //On sauvegarde les pages naviguées	
+		histoDisplay();
+		}
+		/*
+		else
+		{
+		alert('Page déjà en cours!');
+		}
+		*/
+	}
+	
+	function loadPageHisto(page)
+	{
+		var content=document.getElementById('content');
+		x='<iframe id="iframe" name="iframe" src="'
+			+page
+			+'" scrolling="auto" align="middle"'
+			+' marginwidth="15px" marginheight="10px" width="500px" height="452px" frameborder="0"></iframe>';
+		content.innerHTML=x;
+		histoDisplay();
+	}
+	
+	function histo(page)//sauvegarde les pages naviguées
+	{
+	tab[compteur]=page;
+	}
+	
+
+	function back()
+	{
+		if(compteurHisto==1){loadPageHisto('home.html')}
+		else
+		{			
+			compteurHisto-=1;
+			loadPageHisto(tab[compteurHisto]);
+			histoDisplay();
+		}
+	}
+				
+	function next()
+	{
+		if (compteurHisto==compteurMax){loadPageHisto(tab[compteurMax]);}
+		else
+		{
+		compteurHisto+=1;
+		loadPageHisto(tab[compteurHisto]);
+		histoDisplay();
+		}
+	}
+	
+	function histoDisplay()
+	{
+	document.getElementById('histoDisplay').style.background="#84FF84";
+	texte="";
+	var namePage;
+	
+	for(i=1;i<=(tab.length-1);i++)
+	{
+		for(j=0; j<=page.length-1; j++)
+		{
+			if(tab[i]==page[j][1] /*&& language==page[j][5]*/)
+				{
+					namePage=page[j][2]
+				}
+		}
+		texte+='<a class="link" onclick="loadPageHisto(\''+tab[i]+'\')">'+namePage+'</a><br />';
+	}
+	var div=document.getElementById('histoDisplay');
+	div.innerHTML=texte;
+	}	
+/* Fin Lien et Historique */
+		
+	function insert(urlPage,namePage,groupe,numberGroup,langue)
+	{
+		page[insertVar] = new Array(6);
+		page[insertVar]=[insertVar,urlPage,namePage,groupe,numberGroup,langue] //Le tableau [][6]
+		insertVar++;
+	}
+	
+	/*
+	verifParcourPage();
+	function verifParcourPage()
+	{
+		var x="";
+		for(i=0; i<=page.length-1; i++)
+		{
+			for(j=0; j<=5;j++)
+			{
+				x+=page[i][j]+ " ";
+			}
+			x+="\n"
+		}
+		alert(x);
+	}
+	*/
+	
+	function createLink(nameGroup)
+	{
+	var link="";
+		for(i=0; i<=page.length-1; i++)
+		{
+			if(nameGroup==page[i][3] && language==page[i][5])
+			{
+			link+='<a class="link" onclick="loadPage(\''+page[i][1]+'\')">'+page[i][2]+'</a><br />';
+			}
+		}
+	return link;
+	}	
+		
+	function insertGroup(nameGroup)
+	{
+		groupTab[compteurGroup] =nameGroup;
+		compteurGroup++;
+	}	
+	
+	function update()
+	{
+	//-------------------------------------------------------------------Ajout de groupe-------->
+		if(accessetat==1){openGroup('access');}
+		if(creationetat==1){openGroup('creation');}
+	//-------------------------------------------------------------------Ajout de groupe-------->
+	}	
+	
+	/*
+	function closeAllGroup()
+	{
+		//-------------------------------------------------------------------Ajout de groupe-------->
+		accessetat=0;
+		creationetat=0;		
+		//-------------------------------------------------------------------Ajout de groupe-------->	
+		for(i=0;i<=groupTab.length; i++)
+		{
+		var div=document.getElementById(groupTab[i]);
+		var div2=document.getElementById(groupTab[i]+'ico');
+		div.innerHTML='';
+		div2.innerHTML='<img src="img/+.bmp" />';	
+		}
+	}
+	*/
+	
+	function closeGroup(groupName)
+	{
+		//-------------------------------------------------------------------Ajout de groupe-------->
+		if (groupName+'etat'=='accessetat'){ accessetat=0; }
+		if (groupName+'etat'=='creationetat'){ creationetat=0; }	
+		//-------------------------------------------------------------------Ajout de groupe-------->	
+		for(i=0;i<=groupTab.length; i++)
+		{
+			if (groupTab[i]==groupName)
+			{
+			var div=document.getElementById(groupName);
+			var div2=document.getElementById(groupName+'ico');
+			div.innerHTML='';
+			div2.innerHTML='<img src="img/+.bmp" />';	
+			}
+		}
+	}
+	
+	function openGroup(groupName)
+	{
+		//-------------------------------------------------------------------Ajout de groupe-------->
+		if (groupName+'etat'=='accessetat'){ accessetat=1; }
+		if (groupName+'etat'=='creationetat'){ creationetat=1; }
+				
+		//-------------------------------------------------------------------Ajout de groupe-------->	
+		for(i=0;i<=groupTab.length; i++)
+		{
+			if (groupTab[i]==groupName)
+			{
+			var div=document.getElementById(groupName);
+			var div2=document.getElementById(groupName+'ico');
+			div.innerHTML='<br>'+createLink(groupName);
+			div2.innerHTML='<img src="img/-.bmp" />';	
+			}
+			 	
+		}
+	}
+
+	function openReduceGroup(id, ico)
+	{
+		var div=document.getElementById(id);
+		var div2=document.getElementById(ico);
+		var etat;
+		init(0);		
+
+		
+		function init(x)
+		{
+			if(x==0)
+			{
+			//-------------------------------------------------------------------Ajout de groupe-------->
+				if(id=='access')
+				{
+				lien='<br>'+createLink('access');
+				etat=accessetat;
+				}
+				
+				if(id=='creation')
+				{
+				lien='<br>'+createLink('creation');
+				etat=creationetat;
+				//-------------------------------------------------------------------Ajout de groupe-------->
+				}
+			}
+			
+			if(x==1)
+			{
+				//-------------------------------------------------------------------Ajout de groupe-------->
+				if(id=='access')
+				{				
+				accessetat=etat;
+				}
+				
+				if(id=='creation')
+				{
+				creationetat=etat;
+				}
+				//-------------------------------------------------------------------Ajout de groupe-------->
+			}
+			
+		}
+				
+		if(etat==0)
+		{
+		div.innerHTML=lien;
+		div2.innerHTML='<img src="img/-.bmp" />';
+		etat=1;
+		init(1);
+		}
+		else
+		{
+		div.innerHTML='';
+		div2.innerHTML='<img src="img/+.bmp" />';
+		etat=0;		
+		init(1); 
+		}
+	}
+
+	function openReduce()
+	{
+		var div=document.getElementById('histoFleche');
+		var div2=document.getElementById('icoHisto');
+	
+		if(etatOpenReduce==0)
+		{
+		div.innerHTML='<div id="histoDisplay"></div>';
+		div2.innerHTML='<img src="img/histo-.bmp" />';
+		etatOpenReduce=1;
+		}
+		else
+		{
+		document.getElementById('histoDisplay').style.background="#84FF84";
+		div.innerHTML='';
+		div2.innerHTML='<img src="img/histo+.bmp" />';
+		etatOpenReduce=0;		 
+		}
+	}
+		
+
+// Impression de l'iframe
+function iPrint(ptarget)
+{
+ptarget.focus();
+ptarget.print();
+}
+
+/**********Module de Recherche*****************/
+initSearch();
+function initSearch()
+{
+var iframeInitSearch='';
+	for(i=0; i<=(page.length-1); i++)
+	{
+	url=page[i][1];
+
+	iframeInitSearch+='<iframe id="loadIframeHide" src="'+url+'"></iframe>';	
+	//alert(iframeInitSearch);
+	}
+	document.getElementById('loadIframeHide').innerHTML=iframeInitSearch;//affiche la iframe dans le div caché	
+}
+/*
+function initSearch()
+{
+	for(i=0; i<=(page.length-1); i++)
+	{
+	url=page[i][1];
+	x='<iframe id="iframeHide" name="iframeHide" src="'
+	+url
+	+'" scrolling="auto" align="middle"'
+	+' marginwidth="15px" frameborder="0"></iframe>';
+	searchHideDiv.innerHTML=x;//affiche la iframe dans le div caché
+	
+	setTimeout("contenu=getIframeContent();",0);
+	}
+}
+*/
+
+document.getElementById('resultSearchLayer').style.display="none";
+	 function search()
+     {
+		searchResultDisplay = new Array();//un tableau est crée pour chaque saisie	
+		document.getElementById('menu').style.display="none";
+		compteur=0;
+		document.getElementById('resultSearchLayer').style.display="";
+		recherche=document.getElementById('recherche').value;//contenu du champs de recherche tapé par l'utilisateur
+		
+		reg = new RegExp(recherche,"ig");
+		if(reg=="/(?:)/gi")
+		{
+		document.getElementById('resultSearchLayer').style.display="none";
+		document.getElementById('menu').style.display="";
+		}//supprime l'élément espace de la recherche, on affiche rien dans resultSearch
+		else
+		{			
+			//Insertion du contenu de toute les iframes dans la div cachée
+			var searchHideDiv=document.getElementById('searchHide');
+			display = document.getElementById('resultSearch');	
+			
+			x=0;//x et y des compteurs pour définir s'il ya trop de résultat ou pas du tout
+			y=0;
+			
+			for(i=0; i<=(page.length-1); i++)
+			{			
+				url=page[i][1];
+				namePage=page[i][2];
+				langage=page[i][5];
+			/*
+				url='home.html';
+				namePage='HomZ';
+				langage='FR';
+			*/
+			
+						x='<iframe id="iframeHide" name="iframeHide" src="'
+						+url
+						+'" scrolling="auto" align="middle"'
+						+' marginwidth="15px" marginheight="10px" width="500px" height="452px" frameborder="0" onload="tmp();"></iframe>';
+				searchHideDiv.innerHTML=x;//affiche la iframe dans le div caché
+				
+				//alert('salut');
+
+			}//fin du for
+			if (x!=0 && y==0){display.innerHTML='Need more precision';}	
+			if (y==0){display.innerHTML='No results';}
+
+		}//fin du else
+		
+	 }
+	 
+	 function tmp ()
+	 {
+	 
+				contenu=getIframeContent();
+				//alert('pause');
+				//fonction qui laisse le temps de charger le contenu de l'iframe
+									
+				
+				//Enregistrement du tableau pour le module de recherche
+				var resultat = contenu.match(reg);				
+				if(resultat!=null)
+				{
+					x++;
+					if(resultat.length<20)//limite le nombre de résultat à 20 occurences 
+					{			
+						y++;		
+						searchResultDisplay[compteur]=new Array(4);					
+						searchResultDisplay[compteur][0]=namePage;
+						searchResultDisplay[compteur][1]=url
+						searchResultDisplay[compteur][2]=langage
+						searchResultDisplay[compteur][3]=resultat.length;	
+						compteur++;	
+						z='<img src="img/gif-loupe.gif" /><br>';								
+						for(j=0; j<=(searchResultDisplay.length-1); j++)
+						{	
+						z+='<a class="link" onclick="loadPageHisto(\''
+						+searchResultDisplay[j][1]+'\')">'
+						+searchResultDisplay[j][0]+'</a>'
+						+ ' score: '+ searchResultDisplay[j][3]
+						+ ' '+ searchResultDisplay[j][2]
+						+ '<br />';
+						display.innerHTML=z;		
+						}			
+					 }
+				}
+	 }
+/*	 
+	 function sleep(millis)
+	 {
+    	var notifier = new EventNotifier();
+   		 setTimeout(notifier, millis);
+    	notifier.wait();
+	 }
+*/
+/* 
+	 function empty()
+	 {	
+		 for(i=0; i<=searchResultDisplay.length-1; i++)
+		 {
+			 for(j=0; j<=0; j++)
+			 {			  
+			 	searchResultDisplay[i][j]=null;
+			 }
+		 }
+*/
+
+/*
+	 function displaySearchResult()
+	 {
+		for(i=0; i<=searchResultDisplay.length-1; i++)
+		{	
+			 x+= searchResultDisplay[i][0]+ ' ' + searchResultDisplay[i][2] + ' score: '+ searchResultDisplay[i][3]+'<br>';
+	 	}
+		alert(x);
+	 }
+*/
+
+	function getIframeContent()
+	{
+	
+		IE  = window.ActiveXObject ? true : false;
+		MOZ = window.sidebar       ? true : false;
+		
+		var code;
+		
+		if(IE)
+		{
+		edoc = window.frames['iframeHide'].document;
+		code = edoc.body.innerHTML;
+		}
+	
+		if(MOZ)
+		{
+		code = document.getElementById('iframeHide').contentDocument.body.innerHTML;
+		}
+		//alert(code);
+		return(code)
+		
+	}
+	
+/**********Module de Recherche*****************/	
+
+
+</script>
+</body>
+</html>

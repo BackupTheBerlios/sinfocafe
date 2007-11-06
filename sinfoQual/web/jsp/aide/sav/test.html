@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<script type="text/javascript">
+function sahiIsIE(){
+ var browser = navigator.appName;
+ return browser == "Microsoft Internet Explorer";
+}
+
+function sahiCreateRequestObject(){
+ var obj;
+ if(sahiIsIE()){
+  obj = new ActiveXObject("Microsoft.XMLHTTP");
+ }else{
+  obj = new XMLHttpRequest();
+ }
+ return obj;
+}
+
+function sahiSendToServer(url){
+ try{
+  var http = sahiCreateRequestObject();
+  var url = url;
+  http.open("GET", url, false);
+  http.send(null);
+  return http.responseText;
+    }catch(ex){throw ex;}
+}
+
+function sleep(ms){
+ sahiSendToServer("http://localhost:9999/dyn/sleep?ms="+ms);
+}
+
+var start = new Date();
+sleep(1000);
+alert((new Date()) - start);
+</script>
+</body>
+</html>

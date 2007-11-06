@@ -1,0 +1,170 @@
+	body
+	{
+	margin: 0;
+	font-family: "Verdana", Arial, sans-serif;
+	font-size:11px;
+	color:#000000;
+	}
+	
+	#help
+	{
+	background-color:#336633;
+	padding:0;
+	margin:0;
+	}
+	
+	#header
+	{	
+	height:80px;		
+	padding:14px;
+	}
+	
+	#headerContent
+	{	
+	height:77px;
+	background:url(img/logo_fapecafes.jpg);
+	background-repeat:no-repeat;
+	background-color:#FFFFFF;
+	padding:5px;
+	}
+	
+	#main
+	{
+	padding:14px;	
+	}
+	
+	#content
+	{
+	height:460px;
+	width:500px;
+	background-color:#FFFFFF;
+	}
+	
+	#menu
+	{
+	width:172px;
+	padding:14px;
+	padding-right:0;
+	text-align:left;
+	max-height:500px;
+	background-color:#336633;
+	}
+
+	#menuContent
+	{
+	background:#FFFFFF;
+	padding:4px;
+	}	
+	
+	#resultSearchLayer
+	{
+	display:;
+	padding:14px;
+	padding-right:0;
+	width:172px;
+	}
+	
+	#resultSearch
+	{
+	padding-left:2px;
+	max-height:460px;
+	overflow:auto;
+	color:#333333;
+	}
+	
+	.link:hover
+	{
+	cursor:pointer;	
+	font-weight:bold;
+	}
+	
+	.linkImg
+	{
+	display:inline;
+	}
+	
+	
+	#histoDisplay
+	{
+	background-color:#84FF84;
+	}
+	
+	#histoFleche
+	{
+	width:110px;
+	max-height:100px;
+	color:#336633;	
+	background:#FFFFFF;
+	overflow: auto;
+	font-size:9px;
+	position:absolute;
+	left: 21px;
+	top: 170px;	
+	}		
+	
+	.ico
+	{
+	display:inline;
+	}
+		
+	.inline
+	{
+	display:inline;
+	}
+	
+	.groupTitle
+	{
+	font-size:12px;
+	color:#000000;
+	}
+
+/* Arrondi */
+	
+.arrondi{display:block}
+.arrondi *{
+  display:block;
+  height:1px;
+  overflow:hidden;
+  font-size:.01em;
+  background:#FFFFFF}
+.arrondi1{
+  margin-left:3px;
+  margin-right:3px;
+  padding-left:1px;
+  padding-right:1px;
+  border-left:1px solid #8aa78a;
+  border-right:1px solid #8aa78a;
+  background:#ccd8cc}
+.arrondi2{
+  margin-left:1px;
+  margin-right:1px;
+  padding-right:1px;
+  padding-left:1px;
+  border-left:1px solid #477547;
+  border-right:1px solid #477547;
+  background:#d8e1d8}
+.arrondi3{
+  margin-left:1px;
+  margin-right:1px;
+  border-left:1px solid #d8e1d8;
+  border-right:1px solid #d8e1d8;}
+.arrondi4{
+  border-left:1px solid #8aa78a;
+  border-right:1px solid #8aa78a}
+.arrondi5{
+  border-left:1px solid #ccd8cc;
+  border-right:1px solid #ccd8cc}
+.arrondifg{
+  background:#FFFFFF}
+	  
+div#tipDiv
+ {
+  position:absolute; visibility:hidden; left:0; top:0; z-index:10000;
+  background-color:#dee7f7; border:1px solid #337;
+  width:220px; padding:3px;
+  color:#000; font-size:11px; line-height:1.2;
+}
+
+/* These are optional. They demonstrate how you can individually format tooltip content  */
+div.tp1 { font-size:12px; color:#336; font-style:italic }
+div.tp2 { font-weight:bolder; color:#337; padding-top:4px }

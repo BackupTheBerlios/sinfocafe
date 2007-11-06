@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+	<data-sources />
+	<form-beans>
+		<form-bean name="connectForm"		type="com.calyon.dtb.login.struts.form.ConnectForm" />
+		<form-bean name="disconnectForm"	type="com.calyon.dtb.login.struts.form.DisconnectForm" />
+		<!-- Debut form audit -->
+		<form-bean name="lastLogForm"		type="com.calyon.dtb.audit.struts.form.LastLogForm" />
+		<form-bean name="auditForm"			type="com.calyon.dtb.audit.struts.form.AuditForm" />
+		<!-- Fin form audit -->
+		
+		<!-- Debut form docs archivés -->
+		<form-bean name="archivedDocsForm"			type="com.calyon.dtb.archive.form.ArchivedDocsForm" />
+		<!-- Debut form docs archivés -->
+		
+		<!-- Debut form referentiel -->
+		<form-bean name="ListeDocMetierForm"		type="com.calyon.dtb.referentiel.struts.form.ListeDocMetierForm" />
+		<form-bean name="ListeDocMetierTempForm"	type="com.calyon.dtb.referentiel.struts.form.ListeDocMetierTempForm" />
+		<form-bean name="ListeDocDomaineForm"		type="com.calyon.dtb.referentiel.struts.form.ListeDocDomaineForm" />
+		<form-bean name="ListeDocDomaineTempForm"	type="com.calyon.dtb.referentiel.struts.form.ListeDocDomaineTempForm" />
+		
+		<!-- Fin form referentiel -->
+		<form-bean name="AdminRefDomaineForm"		type="com.calyon.dtb.referentiel.struts.form.AdminRefDomaineForm" />
+		<form-bean name="AdminRefMetierForm"		type="com.calyon.dtb.referentiel.struts.form.AdminRefMetierForm" />
+		<form-bean name="archiveDocForm"		type="com.calyon.dtb.document.struts.form.ArchiveDocForm" />
+		<form-bean name="viewDocumentForm"		type="com.calyon.dtb.document.struts.form.ViewDocumentForm" />
+		<form-bean name="viewFilesForm"			type="com.calyon.dtb.document.struts.form.ViewFilesForm" />
+		<form-bean name="uploadForm"			type="com.calyon.dtb.document.struts.form.UploadForm" />
+		<form-bean name="searchForm"			type="com.calyon.dtb.search.struts.form.SearchForm" />
+		<form-bean name="RattachementsMetierForm"		type="com.calyon.dtb.referentiel.struts.form.RattachementsMetierForm" />
+		<form-bean name="RattachementsDomaineForm"		type="com.calyon.dtb.referentiel.struts.form.RattachementsDomaineForm" />
+		<form-bean name="libellesNiveauxMetierForm"	type="com.calyon.dtb.referentiel.struts.form.LibellesNiveauxMetierForm" />
+
+		<form-bean name="derogationForm"	type="com.calyon.dtb.derogation.struts.form.DerogationForm" />
+		<!-- Debut form workflow -->
+		<form-bean name="corbeilleForm"		type="com.calyon.dtb.workflow.struts.form.CorbeilleForm" />
+		<form-bean name="eInitForm"			type="com.calyon.dtb.workflow.struts.form.EInitForm" />
+		<form-bean name="eCreaForm"			type="com.calyon.dtb.workflow.struts.form.ECreaForm" />
+		<form-bean name="eRedacForm"		type="com.calyon.dtb.workflow.struts.form.ERedacForm" />
+		<form-bean name="eValidForm"		type="com.calyon.dtb.workflow.struts.form.EValidForm" />
+		<form-bean name="consSupForm"		type="com.calyon.dtb.workflow.struts.form.ConsSupForm" />
+		
+		<form-bean name="forwardForm"		type="com.calyon.dtb.workflow.struts.form.ForwardForm" />
+		<form-bean name="updateRevisionForm"		type="com.calyon.dtb.workflow.struts.form.UpdateRevisionForm" />
+		<form-bean name="archivedTreeForm"	type="com.calyon.dtb.archive.form.ArchivedTreeForm" />
+		
+		<!-- Fin form workflow -->
+	</form-beans>
+
+  <global-exceptions />
+	<!-- Global Forwards -->
+	<global-forwards>
+		<forward name="error"		path="/default/error.jsp" redirect="false"/>
+		<forward name="home"		path="/default/home.jsp" redirect="false"/>
+		<forward name="corbeille"	path="/corbeille.do?strutsaction=init" redirect="false"/>
+		<forward name="close"		path="/default/close.jsp" redirect="false"/>
+	</global-forwards>
+
+<!-- Connexion , deconnexion de l'application -->
+  <action-mappings>
+	<action
+		input="/login.jsp"
+		name="connectForm"
+		path="/connect"
+		scope="request"
+		type="com.calyon.dtb.login.struts.action.ConnectAction" >
+		<forward name="success"			path="/default/home.jsp" />
+		<forward name="failed"			path="/login.jsp" redirect="false"/>
+	</action>
+	
+	<action
+		input="/login.jsp"
+		name="disconnectForm"
+		path="/disconnect"
+		scope="request"
+		type="com.calyon.dtb.login.struts.action.DisconnectAction" >
+		<forward name="success"			path="/login.jsp" />
+		<forward name="failed"			path="/login.jsp?error=true"			redirect="false" />
+	</action>
+
+<!-- Debut Docs archivés -->
+	<action
+		input="/search/search.jsp"
+		name="archivedDocsForm"
+		path="/archivedDocs"
+		  scope="request" 
+		  validate="true" 
+		parameter="strutsaction"
+		type="com.calyon.dtb.archive.action.ArchivedDocsAction" >
+		<forward name="success"			path="/search/search.jsp" />
+	</action>
+<!-- Fin Docs archivés -->
+
+<!-- Debut Action audit -->
+
+	<!-- Dernier journal -->
+	<action
+		input="/audit/lastLog.jsp"
+		name="lastLogForm"
+		path="/lastLog"
+		  scope="request" 
+		  validate="true" 
+		parameter="strutsaction"
+		type="com.calyon.dtb.audit.struts.action.LastLogAction" >
+		<forward name="success"			path="/audit/lastLog.jsp" />
+	</action>
+	
+	<!-- Liste des pistes d'audit -->
+	<action
+		input="/audit/auditList.jsp"
+		name="auditForm"
+		path="/auditList"
+		  scope="request" 
+		  validate="true" 
+		parameter="strutsaction"
+		type="com.calyon.dtb.audit.struts.action.AuditAction" >
+		<forward name="success"			path="/audit/lastLog.jsp" />
+		<forward name="popup"			path="/audit/auditFull.jsp" />
+	</action>
+
+<!-- Fin Action audit -->
+
+<!-- Debut Action workflow -->
+
+	<!-- Gestion de la corbeille workflow -->
+	<action
+		input="/workflow/corbeille.jsp"
+		name="corbeilleForm"
+		path="/corbeille"
+		  scope="request" 
+		  validate="true" 
+		parameter="strutsaction"
+		type="com.calyon.dtb.workflow.struts.action.CorbeilleAction" >
+		<forward name="success"			path="/workflow/corbeille.jsp" />
+		<forward name="PGDPCV_EINITDO"			path="/eInit.do" />
+		<forward name="PGDPCV_ECREA"			path="/eCrea.do" />
+		<forward name="PGDPCV_EREDAC"			path="/eRedac.do" />
+		<forward name="PGDPCV_EREDAC1"			path="/eRedac.do" />
+		<forward name="PGDPCV_EREDAC2"			path="/eRedac.do" />
+		<forward name="PGDPCV_EVALID"			path="/eValid.do" />
+		<forward name="PGDPCV_VALID1"			path="/eValid.do" />
+		<forward name="PGDPCV_VALID2"			path="/eValid.do" />
+		<forward name="PGDPCV_VALID3"			path="/eValid.do" />
+		<forward name="PGDPCV_CONSSUP"			path="/consSup.do" />
+		<forward name="PGDPCV_CONSRED"			path="/consSup.do" />
+		<forward name="PGDPCV_REVISION"			path="/consSup.do" />
+		<forward name="failed"					path="/default/home.jsp" />
+	</action>
+
+	<!-- Debut Démarrage d'un dossier workflow, ou demande manuelle de création de version -->
+	<action
+		input="/workflow/eInitdoc.jsp"
+		name="eInitForm"
+		path="/eInit"
+		  scope="request" 
+		 validate="true" 
+		parameter="strutsaction"
+		type="com.calyon.dtb.workflow.struts.action.EInitAction" >
+		<forward name="init"			path="/workflow/eInitdoc.jsp" />
+		<forward name="success"			path="/default/home.jsp" />
+		<forward name="cancel"			path="/default/home.jsp" />
+	</action>
+
+	<!-- Formulaire workflow pour l'etape e_crea (cf DSD)-->
+	<action
+		input="/workflow/eCrea.jsp"
+		name="eCreaForm"
+		path="/eCrea"
+		  scope="request" 
+		 validate="true" 
+		parameter="strutsaction"
+		type="com.calyon.dtb.workflow.struts.action.ECreaAction" >
+		<forward name="init"			path="/workflow/eCrea.jsp" />
+	</action>
+
+	<!-- Formulaire workflow pour l'etape E_REDAC (cf DSD)-->
+	<action
+		input="/workflow/eRedac.jsp"
+		name="eRedacForm"
+		path="/eRedac"
+		  scope="request" 
+		 validate="true" 
+		parameter="strutsaction"
+		type="com.calyon.dtb.workflow.struts.action.ERedacAction" >
+		<forward name="init"			path="/workflow/eRedac.jsp" />
+	</action>
+
+	<!-- Formulaire workflow pour l'etape E_VALID (cf DSD)-->
+	<action
+		input="/workflow/eValid.jsp"
+		name="eValidForm"
+		path="/eValid"
+		  scope="request" 
+		 validate="true" 
+		parameter="strutsaction"
+		type="com.calyon.dtb.workflow.struts.action.EValidAction" >
+		<forward name="init"			path="/workflow/eValid.jsp" />
+	</action>
+
+	<!-- Formulaire workflow pour l'etape de consultation des superviseurs (cf DSD)-->
+	<action
+		input="/workflow/conssup.jsp"
+		name="consSupForm"
+		path="/consSup"
+		  scope="request" 
+		 validate="true" 
+		parameter="strutsaction"
+		type="com.calyon.dtb.workflow.struts.action.ConsSupAction" >
+		<forward name="init"			path="/workflow/conssup.jsp" />
+	</action>
+<!-- Fin Action workflow -->
+
+<!-- Action pour la gestion des derogations -->
+	<action
+		input="/derogation/derogation.jsp"
+		name="derogationForm"
+		path="/derogation"
+		  scope="request" 
+		  validate="true" 
+		parameter="strutsaction"
+		type="com.calyon.dtb.derogation.struts.action.DerogationAction" >
+		<forward name="success"			path="/derogation/derogation.jsp" />
+		<forward name="derogation"			path="/derogation/derogation.jsp" />
+	</action>
+
+<!-- Debut Action referentiel -->
+	<action
+		input="/referentiel/libellesNiveauxMetier.jsp"
+		name="libellesNiveauxMetierForm"
+		path="/libellesNiveauxMetier"
+		  scope="request" 
+		  validate="true" 
+		parameter="strutsaction"
+		type="com.calyon.dtb.referentiel.struts.action.LibellesNiveauxMetierAction" >
+		<forward name="success"					path="/referentiel/libellesNiveauxMetier.jsp" />
+		<forward name="libellesNiveauxMetier"	path="/referentiel/libellesNiveauxMetier.jsp" />
+	</action>
+
+	<action
+		input="/referentiel/adminRefDomaine.jsp"
+		name="AdminRefDomaineForm"
+		path="/adminRefDomaine"
+		  scope="request" 
+		  validate="true" 
+		parameter="strutsaction"
+		type="com.calyon.dtb.referentiel.struts.action.AdminRefDomaineAction" >
+		<forward name="success"			path="/referentiel/adminRefDomaine.jsp" />
+		<forward name="error_fichiers"	path="/referentiel/noFichiers.jsp" />
+	</action>
+	
+	<action
+		input="/referentiel/adminRefMetier.jsp"
+		name="AdminRefMetierForm"
+		path="/adminRefMetier"
+		  scope="request" 
+		  validate="true" 
+		parameter="strutsaction"
+		type="com.calyon.dtb.referentiel.struts.action.AdminRefMetierAction" >
+		<forward name="success"			path="/referentiel/adminRefMetier.jsp" />
+		<forward name="error_fichiers"	path="/default/error.jsp" />
+	</action>
+	
+	<action
+		input="/referentiel/listeDocMetierFin.jsp"
+		name="ListeDocMetierForm"
+		path="/listeDocMetier"
+		  scope="request" 
+		  validate="true" 
+		parameter="strutsaction"
+		type="com.calyon.dtb.referentiel.struts.action.ListeDocMetierAction" >
+		<forward name="success"			path="/referentiel/listeDocMetierFin.jsp" />
+		<forward name="error_fichiers"	path="/referentiel/noFichiers.jsp" />
+	</action>
+	
+	<action
+		input="/referentiel/listeDocMetierTempFin.jsp"
+		name="ListeDocMetierTempForm"
+		path="/listeDocMetierTemp"
+		  scope="request" 
+		  validate="true" 
+		parameter="strutsaction"
+		type="com.calyon.dtb.referentiel.struts.action.ListeDocMetierTempAction" >
+		<forward name="success"			path="/referentiel/listeDocMetierTempFin.jsp" />
+		<forward name="copy"			path="/referentiel/listeDocMetierFin.jsp" />
+		<forward name="error_fichiers"	path="/referentiel/noFichiers.jsp" />
+	</action>
+	
+	<action
+		input="/referentiel/listeDocDomaineFin.jsp"
+		name="ListeDocDomaineForm"
+		path="/listeDocDomaine"
+		  scope="request" 
+		  validate="true" 
+		parameter="strutsaction"
+		type="com.calyon.dtb.referentiel.struts.action.ListeDocDomaineAction" >
+		<forward name="success"			path="/referentiel/listeDocDomaineFin.jsp" />
+		<forward name="error_fichiers"	path="/referentiel/noFichiers.jsp" />
+	</action>
+	
+	<action
+		input="/referentiel/listeDocDomaineTempFin.jsp"
+		name="ListeDocDomaineTempForm"
+		path="/listeDocDomaineTemp"
+		  scope="request" 
+		  validate="true" 
+		parameter="strutsaction"
+		type="com.calyon.dtb.referentiel.struts.action.ListeDocDomaineTempAction" >
+		<forward name="success"			path="/referentiel/listeDocDomaineTempFin.jsp" />
+		<forward name="copy"			path="/referentiel/listeDocDomaineFin.jsp" />
+		<forward name="error_fichiers"	path="/referentiel/noFichiers.jsp" />
+	</action>
+	
+	<action
+		input="/referentiel/rattachementsMetier.jsp"
+		name="RattachementsMetierForm"
+		path="/rattachementsMetier"
+		  scope="request" 
+		  validate="true" 
+		parameter="strutsaction"
+		type="com.calyon.dtb.referentiel.struts.action.RattachementsMetierAction" >
+		<forward name="success"			path="/referentiel/rattachementsMetier.jsp" />
+		<forward name="success_valide"	path="/default/home.jsp" />
+		<forward name="fin"			path="/referentiel/listeDocMetierFin.jsp" />
+		<forward name="error_fichiers"	path="/referentiel/noFichiers.jsp" />
+		<forward name="retour"	path="/referentiel/retourArbre.jsp" />
+	</action>
+	
+	<action
+		input="/referentiel/rattachementsDomaine.jsp"
+		name="RattachementsDomaineForm"
+		path="/rattachementsDomaine"
+		  scope="request" 
+		  validate="true" 
+		parameter="strutsaction"
+		type="com.calyon.dtb.referentiel.struts.action.RattachementsDomaineAction" >
+		<forward name="success"			path="/referentiel/rattachementsDomaine.jsp" />
+		<forward name="success_valide"	path="/default/home.jsp" />
+		<forward name="fin"			path="/referentiel/listeDocDomaineFin.jsp" />
+		<forward name="error_fichiers"	path="/referentiel/noFichiers.jsp" />
+		<forward name="retour"	path="/referentiel/retourArbre.jsp" />
+	</action>
+	
+<!-- Fin Action referentiel -->
+
+	<!-- Debut Action visualisation d'un document -->
+	<action
+		input="/doc/viewDocument.jsp"
+		name="viewDocumentForm"
+		path="/viewDocument"
+		  scope="request" 
+		  validate="true" 
+		parameter="strutsaction"
+		type="com.calyon.dtb.document.struts.action.ViewDocumentAction" >
+		<forward name="viewFile"			path="/doc/viewFiles.jsp" />
+		<forward name="uploadFile"		path="/doc/uploadFile.jsp" />
+		<forward name="success"			path="/doc/viewDocument.jsp" />
+		<forward name="failed"			path="/login.jsp" />
+	</action>
+	<!-- Visualisation et modification suivant les droits du user des pièces jointes d'un document -->
+	<action
+		input="/doc/viewFiles.jsp"
+		name="viewFilesForm"
+		path="/viewFiles"
+		  scope="request" 
+		  validate="true" 
+		parameter="strutsaction"
+		type="com.calyon.dtb.document.struts.action.ViewFilesAction" >
+		<forward name="viewFile"			path="/doc/viewFiles.jsp" />
+		<forward name="uploadFile"		path="/doc/uploadFile.jsp" />
+		<forward name="success"			path="/doc/viewFiles.jsp" />
+		<forward name="failed"			path="/login.jsp" />
+	</action>
+	<!-- Check-in d'une pièce jointe d'un document -->
+	<action
+		input="/doc/uploadFile.jsp"
+		name="uploadForm"
+		path="/uploadFile"
+		  scope="request" 
+		  validate="true" 
+		parameter="strutsaction"
+		type="com.calyon.dtb.document.struts.action.UploadAction" >
+		<forward name="success"			path="/viewFiles.do" />
+		<forward name="uploadFile"		path="/doc/uploadFile.jsp" />
+		<forward name="failed"			path="/login.jsp" />
+		<forward name="successCloseWindow"	path="/default/close.jsp" />
+	</action>
+	
+	<!-- Debut Recherche -->
+	<action
+		input="/search/search.jsp"
+		name="searchForm"
+		path="/search"
+		scope="request" 
+		validate="true" 
+		parameter="strutsaction"
+		type="com.calyon.dtb.search.struts.action.SearchAction" >
+		<forward name="liste"			path="/search/search.jsp" />
+		<forward name="document"		path="/doc/viewDocument.jsp" />
+		<forward name="init"			path="/search/search.jsp" />
+		<forward name="predefinedListe"	path="/search/predefinedSearch.jsp" />
+	</action>
+
+
+	<!-- Fin Recherche -->
+	
+<!-- Fin Action document -->
+
+<!-- Action archivage -->
+	<action
+		name="archiveDocForm"
+		path="/archiveDoc"
+		  scope="request" 
+		  validate="true" 
+		parameter="strutsaction"
+		type="com.calyon.dtb.document.struts.action.ArchiveDocAction" >
+		<forward name="success"		path="/default/home.jsp" />
+	</action>
+
+	<action	path="/saveTree"    type="com.calyon.dtb.tree.action.TreeSaveAction" >
+		<forward name="sucess"		path="/default/home.jsp" />
+		<forward name="failed"		path="/default/home.jsp" />
+	</action>
+
+	<action	path="/commitTree"   type="com.calyon.dtb.tree.action.TreeCommitAction" >
+		<forward name="sucess"		path="/default/home.jsp" />
+		<forward name="failed"		path="/default/home.jsp" />
+	</action>
+	
+	
+	<action path="/selectForwardUser" 	name="forwardForm"
+		parameter="strutsaction" 		type="com.calyon.dtb.workflow.struts.action.ForwardAction"
+				input="/workflow/selectForwardUser.jsp"  		scope="request"  >
+		<forward name="success"			path="/workflow/selectForwardUser.jsp" />
+		<forward name="failed"			path="/workflow/selectForwardUser.jsp" />
+		<forward name="successCloseWindow"	path="/default/close.jsp" />
+	</action>
+
+	<action path="/updateRevision" 	name="updateRevisionForm"
+		parameter="strutsaction" 	type="com.calyon.dtb.workflow.struts.action.UpdateRevisionAction"
+				input="/workflow/updateRevision.jsp"  		scope="request"  >
+		<forward name="success"		path="/workflow/updateRevision.jsp" />
+		<forward name="failed"		path="/workflow/updateRevision.jsp" />
+		<forward name="successCloseWindow"	path="/default/close.jsp" />
+	</action>
+	
+	
+	<action path="/archivedTree" name="archivedTreeForm"
+		parameter="strutsaction" 	type="com.calyon.dtb.archive.action.ArchivedTreeAction"	scope="request"  >
+		<forward name="liste"				path="/archive/archivedTree.jsp" />
+		<forward name="successCloseWindow"	path="/default/close.jsp" />
+	</action>
+
+  </action-mappings>
+  
+    <controller> 
+      <set-property property="processorClass"    value="com.calyon.dtb.filter.GDPRequestProcessor"/> 
+   </controller>
+  
+  
+  <message-resources key="CALYON" parameter="com.calyon.dtb.resources.ApplicationResources"		null="false" /> 
+</struts-config>

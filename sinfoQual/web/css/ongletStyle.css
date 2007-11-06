@@ -1,0 +1,48 @@
+
+.menuOnglet { /* boite qui contient le menu (les onglets) */
+  border-bottom:solid 1px #336633 ; /* crée le trait noir en-dessous des onglets */
+  padding-top:12px ; /* marge intérieure haute */
+  padding-bottom:8px; /* marge intérieure basse */
+display:inline;
+} 
+
+.onglet { /* style des onglets inactifs */
+  background-color: #336633 ; /* le fond de l'onglet est  */
+  color:#FFFFFF;
+  text-decoration:none;
+  border:solid 1px #336633 ; /* encadrement */
+  margin:5px 5px 0px 5px ; /* marge extérieure */
+  padding:7px 3px 7px 3px
+} /* marge intérieure */
+
+.onglet-actif { /* style de l'onglet de la page active */
+   border:solid 1px #336633 ; /* l'encadrement est porté à 2 pixels */
+   border-bottom:solid 1px white ; /* le trait inférieur est effacé */
+   margin:5px 5px 0px 5px ; /* marges intérieures */
+   padding:7px 3px 7px 3px ; /* marges extérieures */  
+   background-color:white} /* le fond de l'onglet actif est blanc*/
+
+/* Liste de la saisie automatique*/
+#liste{
+
+	color:#000000;
+	font-size:12px;
+	cursor:pointer;
+}
+
+ul#liste li{
+/*list-style-image:url(../images/puceRouge.gif);*/
+list-style-image:none;
+color:#00547F;
+}
+
+ul#liste li:hover{
+list-style-image:url(../images/flecheRouge.gif);
+font-weight:bold;
+background-color:#DFE8F4;
+}
+
+a:hover
+{
+cursor:pointer;
+}

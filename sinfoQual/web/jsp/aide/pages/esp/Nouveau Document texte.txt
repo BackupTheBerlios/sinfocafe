@@ -1,0 +1,14 @@
+pages/esp/catacion.html
+pages/esp/filtro_del_test.html
+pages/esp/tamano.html
+pages/esp/cafe_verde.html
+pages/esp/defectos.html
+pages/esp/resumen.html
+
+
+pages/esp/creacion/estructura.html
+pages/esp/creacion/exhibicion_test.html
+pages/esp/creacion/etapa1.html
+pages/esp/creacion/etapa2.html
+pages/esp/creacion/etapa3.html
+pages/esp/creacion/exhibir_resultados.html

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts-config PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+"http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+
+
+<struts-config>
+    <form-beans>
+        <form-bean name="mailForm" type="mail.form.mailForm"/>
+        <form-bean name="displayLogisticsForm" type="display.form.displayLogisticsForm"/>
+        <form-bean name="accessForm" type="access.form.accessForm"/>
+        <form-bean name="displayForm" type="display.form.displayForm"/>
+    </form-beans>
+    
+    <global-exceptions>
+        
+    </global-exceptions>
+    
+    <global-forwards>
+        
+    </global-forwards>
+    
+    <action-mappings>
+        <action input="/display" name="displayForm" path="/display" scope="session" type="display.action.displayAction" attribute="display">
+            <forward name="ok" path="/jsp/display/display_test.jsp" />
+            <forward name="fail" path="/jsp/display/display.jsp" />
+        </action>
+        <action attribute="onglet" name="accessForm" input="/access" path="/access" scope="session" type="access.action.accessAction">
+            <forward name="ok" path="/jsp/access/cafeVerde.jsp" />
+        </action>
+        <action attribute="onglet" name="accessForm" parameter="ongletSubmit" path="/accessTest" scope="session" type="access.action.ongletAction">
+            <forward name="greenCoffee" path="/jsp/access/cafeVerde.jsp" />
+            <forward name="size" path="/jsp/access/tamano.jsp" />
+            <forward name="flaw" path="/jsp/access/defectos.jsp" />
+            <forward name="tasting" path="/jsp/access/catacion.jsp" /> 
+            <forward name="failure" path="/jsp/access/access.jsp" />
+            <forward name="testResult" path="/jsp/access/result.jsp" />
+            <forward name="save" path="/jsp/access/logisticAccess.jsp" />
+        </action>
+        <action path="/session" type="session.action.sessionAction">
+            <forward name="main" path="/jsp/main.jsp" />
+            <forward name="access" path="/jsp/access/access.jsp" />
+            <forward name="create" path="/jsp/creation/step1.jsp" />
+            <forward name="display" path="/jsp/display/display.jsp" />
+            <forward name="failure" path="/jsp/main.jsp" />
+        </action>
+        <action attribute="onglet" name="accessForm" parameter="logistics" path="/logisticAccess" scope="session" type="access.action.logisticAccessAction" >
+            <forward name="success" path="/jsp/access/logisticAccess.jsp" />
+        </action>
+        <action path="/mail" name="mailForm" attribute="mail" type="mail.action.mailAction">
+            <forward name="success" path="/jsp/access/mail.jsp" />
+        </action>
+        <action path="/accessLogistics"      type="access.action.logisticsAction"/>
+        <action path="/displayLogistics" parameter="logistics" name="displayForm" attribute="display" type="display.action.logisticsAction" scope="session" >
+            <forward name="success" path="/jsp/display/display_test.jsp" />
+            <forward name="failure" path="/jsp/display/display.jsp" />
+        </action>
+        <action path="/langue"               type="language.action.languageAction" />
+    </action-mappings>
+    
+    <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>
+    
+    <message-resources parameter="property/langue"/>    
+    
+    <!-- ========================= Tiles plugin ===============================-->
+    <!--
+    This plugin initialize Tiles definition factory. This later can takes some
+    parameters explained here after. The plugin first read parameters from
+    web.xml, thenoverload them with parameters defined here. All parameters
+    are optional.
+    The plugin should be declared in each struts-config file.
+    - definitions-config: (optional)
+    Specify configuration file names. There can be several comma
+    separated file names (default: ?? )
+    - moduleAware: (optional - struts1.1)
+    Specify if the Tiles definition factory is module aware. If true
+    (default), there will be one factory for each Struts module.
+    If false, there will be one common factory for all module. In this
+    later case, it is still needed to declare one plugin per module.
+    The factory will be initialized with parameters found in the first
+    initialized plugin (generally the one associated with the default
+    module).
+    true : One factory per module. (default)
+    false : one single shared factory for all modules
+    - definitions-parser-validate: (optional)
+    Specify if xml parser should validate the Tiles configuration file.
+    true : validate. DTD should be specified in file header (default)
+    false : no validation
+
+    Paths found in Tiles definitions are relative to the main context.
+    -->
+    <plug-in className="org.apache.struts.tiles.TilesPlugin" >
+        <set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />      
+        <set-property property="moduleAware" value="true" />
+    </plug-in>
+    
+    <!-- ========================= Validator plugin =
+            <forward name="first" path="/jsp/display/display_testFirst.jsp" />
+            <forward name="second" path="/jsp/display/display_testSecond.jsp" />
+            ================================ -->
+    <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+        <set-property
+            property="pathnames"
+            value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml"/>
+    </plug-in>
+    
+</struts-config>

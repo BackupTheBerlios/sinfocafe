@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry path="src" kind="src"/>
+	<classpathentry path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JDK1.4.2_12" kind="con"/>
+	<classpathentry path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v5.5" kind="con"/>
+	<classpathentry path="org.eclipse.jst.j2ee.internal.web.container" kind="con"/>
+	<classpathentry path="D:/personnel/PAIR/hibernate-3.2/hibernate3.jar" kind="lib"/>
+	<classpathentry path="D:/personnel/PAIR/PAIR/jxl.jar" kind="lib"/>
+	<classpathentry path="D:/personnel/PAIR/PAIR/mail.jar" kind="lib"/>
+	<classpathentry path="D:/RS2i/workspaces/proc_dtb/WebContent/WEB-INF/lib/struts-legacy.jar" kind="lib"/>
+	<classpathentry path="D:/RS2i/workspaces/proc_dtb/WebContent/WEB-INF/lib/struts.jar" kind="lib"/>
+	<classpathentry path="D:/RS2i/workspaces/proc_dtb/WebContent/WEB-INF/lib/activation.jar" kind="lib"/>
+	<classpathentry path="D:/RS2i/workspaces/proc_dtb/WebContent/WEB-INF/lib/log4j-1.2.13.jar" kind="lib"/>
+	<classpathentry path="D:/RS2i/workspaces/proc_dtb/WebContent/WEB-INF/lib/dom4j-1.5.2.jar" kind="lib"/>
+	<classpathentry path="D:/RS2i/workspaces/proc_dtb/WebContent/WEB-INF/lib/commons-validator.jar" kind="lib"/>
+	<classpathentry path="D:/RS2i/workspaces/proc_dtb/WebContent/WEB-INF/lib/commons-beanutils.jar" kind="lib"/>
+	<classpathentry path="D:/RS2i/workspaces/proc_dtb/WebContent/WEB-INF/lib/commons-collections-3.2.jar" kind="lib"/>
+	<classpathentry path="D:/RS2i/workspaces/proc_dtb/WebContent/WEB-INF/lib/commons-digester.jar" kind="lib"/>
+	<classpathentry path="D:/RS2i/workspaces/proc_dtb/WebContent/WEB-INF/lib/commons-fileupload.jar" kind="lib"/>
+	<classpathentry path="D:/RS2i/workspaces/proc_dtb/WebContent/WEB-INF/lib/commons-lang-2.2.jar" kind="lib"/>
+	<classpathentry path="D:/RS2i/workspaces/proc_dtb/WebContent/WEB-INF/lib/commons-logging-1.1.jar" kind="lib"/>
+	<classpathentry path="build/classes" kind="output"/>
+</classpath>
